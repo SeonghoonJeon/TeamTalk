@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.chat_server.mapper.ChatJoinMapper">
+
+    <select id="existsJoin" resultType="int">
+        SELECT COUNT(*)
+        FROM chat_join
+        WHERE room_id = #{roomId}
+          AND member_id = #{memberId}
+    </select>
+
+    <insert id="insertJoin">
+        INSERT INTO chat_join (member_id, dept_id, room_id)
+        VALUES (#{memberId}, #{deptId}, #{roomId})
+    </insert>
+
+    <delete id="deleteJoin">
+        DELETE FROM chat_join
+        WHERE room_id = #{roomId}
+          AND member_id = #{memberId}
+    </delete>
+
+</mapper>
