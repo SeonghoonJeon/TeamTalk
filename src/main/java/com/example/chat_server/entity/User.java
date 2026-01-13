@@ -2,6 +2,8 @@ package com.example.chat_server.entity;
 
 public class User {
     private Long id;
+    private Long memberId;
+    private Long deptId;
     private String username;
     private String password;
     private String role;
@@ -10,6 +12,12 @@ public class User {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public Long getMemberId() { return memberId; }
+    public void setMemberId(Long memberId) { this.memberId = memberId; }
+
+    public Long getDeptId() { return deptId; }
+    public void setDeptId(Long deptId) { this.deptId = deptId; }
 
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
